@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route One | Deal Autopsies & Rewrites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body{font-family:'Inter',sans-serif;background:#0F383C;color:#E5EBE8;}
+        .autopsy-card{background:rgba(255,255,255,0.03);border:1px solid rgba(167,188,178,0.1);}
+        .rewrite-good{background:rgba(34,197,94,0.1);border-left:3px solid #22c55e;}
+        .rewrite-bad{background:rgba(239,68,68,0.1);border-left:3px solid #ef4444;}
+        .tab-active{border-bottom:2px solid #A7BCB2;color:#A7BCB2;}
+        .script-box{background:rgba(0,0,0,0.3);font-family:monospace;}
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="px-4 py-6 border-b border-white/10">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-[#A7BCB2] rounded-full flex items-center justify-center">
+                    <span class="text-[#0F383C] font-bold">R1</span>
+                </div>
+                <div>
+                    <p class="font-bold">Deal Autopsies & Rewrites</p>
+                    <p class="text-xs text-white/50">What died. Why. How to save it.</p>
+                </div>
+            </div>
+            <div class="flex space-x-6 text-sm">
+                <button onclick="showTab('autopsies')" id="tab-autopsies" class="tab-active pb-1 transition-colors">Autopsies</button>
+                <button onclick="showTab('rewrites')" id="tab-rewrites" class="text-white/50 hover:text-white pb-1 transition-colors">Rewrites</button>
+                <button onclick="showTab('scripts')" id="tab-scripts" class="text-white/50 hover:text-white pb-1 transition-colors">Exact Scripts</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- AUTOPSIES TAB -->
+    <div id="autopsies" class="tab-content px-4 py-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold mb-2">Deal Autopsies</h1>
+                <p class="text-white/60">Real deals that died. Exact moments. Root causes. Prevention.</p>
+            </div>
+
+            <!-- Autopsy 1 -->
+            <div class="autopsy-card rounded-xl p-6 mb-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-skull text-red-400"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">The Brian Compton Stall</p>
+                            <p class="text-white/50 text-sm">Entertainment/Production • $27K tier • Died: Post-proposal</p>
+                        </div>
+                    </div>
+                    <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">NO CLOSE</span>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE MOMENT</p>
+                        <div class="bg-black/30 rounded p-3 text-sm">
+                            <p class="text-white/80 italic">"How quickly could you get us onboarded?"</p>
+                            <p class="text-white/50 mt-2">→ Rep answered with process details</p>
+                            <p class="text-white/50">→ No close attempt</p>
+                            <p class="text-white/50">→ "I'll send you info"</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE AUTOPSY</p>
+                        <ul class="text-sm text-white/70 space-y-1">
+                            <li>• Buying signal ignored</li>
+                            <li>• Info given vs commitment asked</li>
+                            <li>• No next step scheduled</li>
+                            <li>• Momentum died</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE FIX</p>
+                        <div class="bg-green-500/10 border border-green-500/30 rounded p-3 text-sm">
+                            <p class="text-green-400 font-semibold mb-1">Should have said:</p>
+                            <p class="text-white/90 italic">"If we could start Monday, should we schedule your kickoff call for Thursday?"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autopsy 2 -->
+            <div class="autopsy-card rounded-xl p-6 mb-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-skull text-red-400"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">The Kellen Smit Drift</p>
+                            <p class="text-white/50 text-sm">Transition/Challenging • $21K tier • Died: Pre-proposal</p>
+                        </div>
+                    </div>
+                    <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">NO CLOSE</span>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE MOMENT</p>
+                        <div class="bg-black/30 rounded p-3 text-sm">
+                            <p class="text-white/80 italic">"What's Brian gonna do?" "Challenging transitional period"</p>
+                            <p class="text-white/50 mt-2">→ Rep acknowledged transition</p>
+                            <p class="text-white/50">→ No continuity plan offered</p>
+                            <p class="text-white/50">→ Fear won</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE AUTOPSY</p>
+                        <ul class="text-sm text-white/70 space-y-1">
+                            <li>• Transition fear unaddressed</li>
+                            <li>• No bridge strategy offered</li>
+                            <li>• Team continuity not explained</li>
+                            <li>• Anxiety > pain of staying</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE FIX</p>
+                        <div class="bg-green-500/10 border border-green-500/30 rounded p-3 text-sm">
+                            <p class="text-green-400 font-semibold mb-1">Should have said:</p>
+                            <p class="text-white/90 italic">"We'll work with Brian for 30 days, train him on handoff, and he becomes your internal liaison. No one gets left behind."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autopsy 3 -->
+            <div class="autopsy-card rounded-xl p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-skull text-red-400"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">The Carly K Price Anchor</p>
+                            <p class="text-white/50 text-sm">Music/Studio • $21K tier • Died: Price shock</p>
+                        </div>
+                    </div>
+                    <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">NO CLOSE</span>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE MOMENT</p>
+                        <div class="bg-black/30 rounded p-3 text-sm">
+                            <p class="text-white/80 italic">"Why is QuickBooks so expensive?" "Dumb questions about..."</p>
+                            <p class="text-white/50 mt-2">→ Price discussed early</p>
+                            <p class="text-white/50">→ Shame about knowledge gaps</li>
+                            <p class="text-white/50">→ Value not established</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE AUTOPSY</p>
+                        <ul class="text-sm text-white/70 space-y-1">
+                            <li>• Price came before value</li>
+                            <li>• Shame not normalized</li>
+                            <li>• Founder time cost not calculated</li>
+                            <li>• $21K felt like expense, not savings</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="text-[#A7BCB2] font-semibold text-sm mb-2">THE FIX</p>
+                        <div class="bg-green-500/10 border border-green-500/30 rounded p-3 text-sm">
+                            <p class="text-green-400 font-semibold mb-1">Should have done first:</p>
+                            <p class="text-white/90 italic">"You mentioned 10 hours/month on finance. At your rate, that's $5K in founder time. We do it for $1,800. You save $3,200 AND get better data."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REWRITES TAB -->
+    <div id="rewrites" class="tab-content px-4 py-8 hidden">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold mb-2">Transcript Rewrites</h1>
+                <p class="text-white/60">What was said vs what should have been said. Exact dialogue.</p>
+            </div>
+
+            <!-- Rewrite 1 -->
+            <div class="mb-8">
+                <p class="text-[#A7BCB2] font-semibold mb-4">SCENARIO 1: The Buying Signal</p>
+                
+                <div class="rewrite-bad rounded-xl p-6 mb-4">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">ACTUAL</span>
+                        <p class="text-red-400 font-semibold">What Happened (Deal Died)</p>
+                    </div>                    
+                    
+                    <div class="space-y-2 text-sm">
+                        <p><strong class="text-white/60">Prospect:</strong> "How quickly could you get us onboarded?"</p>
+                        <p><strong class="text-white/60">Rep:</strong> "Oh, usually within a week or two. Depends on complexity. We need discovery first, then setup takes 3-5 days..."</p>
+                        <p><strong class="text-white/60">Prospect:</strong> [listens]</p>
+                        <p><strong class="text-white/60">Rep:</strong> "I'll send you some info to review."</p>
+                        <p><strong class="text-red-400">Result: No next step. Deal stalled.</strong></p>
+                    </div>
+                </div>
+
+                <div class="rewrite-good rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">REWRITE</span>
+                        <p class="text-green-400 font-semibold">What Should Happen (Deal Advances)</p>
+                    </div>
+                    
+                    <div class="space-y-2 text-sm">
+                        <p><strong class="text-white/60">Prospect:</strong> "How quickly could you get us onboarded?"</p>
+                        <p><strong class="text-green-400">Rep:</strong> "If we could have you fully onboarded by next Monday, would that work for your timeline?"</p>
+                        <p><strong class="text-white/60">Prospect:</strong> "Yeah, that would actually be perfect."</p>
+                        <p><strong class="text-green-400">Rep:</strong> "Great. Let's schedule your kickoff call for Thursday. Do mornings or afternoons work better?"</p>
+                        <p><strong class="text-green-400">Result: Kickoff scheduled. Deal advanced.</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rewrite 2 -->
+            <div class="mb-8">
+                <p class="text-[#A7BCB2] font-semibold mb-4">SCENARIO 2: The Price Question</p>
+                
+                <div class="rewrite-bad rounded-xl p-6 mb-4">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">ACTUAL</span>
+                        <p class="text-red-400 font-semibold">What Happened (Objection Escalated)</p>
+                    </div>                    
+                    
+                    <div class="space-y-2 text-sm">
+                        <p><strong class="text-white/60">Prospect:</strong> "That seems expensive."</p>
+                        <p><strong class="text-white/60">Rep:</strong> "Well, our pricing is competitive for the market. We offer a lot of value..."</p>
+                        <p><strong class="text-white/60">Prospect:</strong> [pushes back harder]</p>
+                        <p><strong class="text-red-400">Result: Defensive spiral. No close.</strong></p>
+                    </div>
+                </div>
+
+                <div class="rewrite-good rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">REWRITE</span>
+                        <p class="text-green-400 font-semibold">What Should Happen (Price Reframed)</p>
+                    </div>
+                    
+                    <div class="space-y-2 text-sm">
+                        <p><strong class="text-white/60">Prospect:</strong> "That seems expensive."</p>
+                        <p><strong class="text-green-400">Rep:</strong> "I get it. Let me ask—how many hours are you spending on finance each month?"</p>
+                        <p><strong class="text-white/60">Prospect:</strong> "Probably 15 hours or so."</p>
+                        <p><strong class="text-green-400">Rep:</strong> "At your effective rate, that's $7,500 in founder time. Our service is $2,300. You're actually saving $5,200 per month while getting better data. Expensive would be keeping it in-house."</p>
+                        <p><strong class="text-green-400">Result: Price objection neutralized. Value established.</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rewrite 3 -->
+            <div>
+                <p class="text-[#A7BCB2] font-semibold mb-4">SCENARIO 3: The Transition Fear</p>
+                
+                <div class="rewrite-bad rounded-xl p-6 mb-4">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">ACTUAL</span>
+                        <p class="text-red-400 font-semibold">What Happened (Fear Won)</p>
+                    </div>                    
+                    
+                    <div class="space-y-2 text-sm">
+                        <p><strong class="text-white/60">Prospect:</strong> "What's going to happen to our current bookkeeper?"</p>
+                        <p><strong class="text-white/60">Rep:</strong> "We would take over the day-to-day operations..."</p>
+                        <p><strong class="text-white/60">Prospect:</strong> [anxiety visible]</p>
+                        <p><strong class="text-red-400">Result: Fear not addressed. Deal lost.</strong></p>
+                    </div>
+                </div>
+
+                <div class="rewrite-good rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">REWRITE</span>
+                        <p class="text-green-400 font-semibold">What Should Happen (Fear Calmed)</p>
+                    </div>
+                    
+                    <div class="space-y-2 text-sm">
+                        <p><strong class="text-white/60">Prospect:</strong> "What's going to happen to our current bookkeeper?"</p>
+                        <p><strong class="text-green-400">Rep:</strong> "We build a bridge, not a wall. Your bookkeeper works with us for 30 days, learns our systems, and becomes your internal liaison. They level up, you get continuity, nothing falls through the cracks. Want me to walk you through exactly how that handoff works?"</p>
+                        <p><strong class="text-white/60">Prospect:</strong> "Yes, that would help."</p>
+                        <p><strong class="text-green-400">Result: Fear addressed. Continuity established.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS TAB -->
+    <div id="scripts" class="tab-content px-4 py-8 hidden">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold mb-2">Exact Scripts</h1>
+                <p class="text-white/60">Word-for-word what works. Copy. Paste. Adapt.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Script 1 -->
+                <div class="autopsy-card rounded-xl p-6">
+                    <p class="text-[#A7BCB2] font-semibold mb-3">OPENING (Entertainment Industry)</p>
+                    
+                    <div class="script-box rounded p-4 text-sm leading-relaxed">
+                        "I know [Carmel/your weekend/etc] was great. Listen, when it rains it pours—you've obviously got momentum building.
+
+                        <br><br>I'm curious, how's your current finance setup handling all this growth? Are you still drowning in the month-end close or have you got that sorted?"
+                    </div>
+                    
+                    <p class="text-white/60 text-sm mt-3"><i class="fas fa-info-circle mr-1"></i>Acknowledges success first. Asks about pain. Positions as enabler.</p>
+                </div>
+
+                <!-- Script 2 -->
+                <div class="autopsy-card rounded-xl p-6">
+                    <p class="text-[#A7BCB2] font-semibold mb-3">FOUNDER TIME CALCULATOR</p>
+                    
+                    <div class="script-box rounded p-4 text-sm leading-relaxed">
+                        "Quick question—how many hours are you spending on finance stuff each month? Ballpark.
+
+                        <br><br>[They answer]
+
+                        <br><br>And what's your effective hourly rate? If you weren't doing books, what would that time generate?
+
+                        <br><br>[They answer $X]
+
+                        <br><br>So you're spending $[15 × $X = $Y] in founder time on finance. Our service is $2,300. You're actually <strong>saving $[Y-2300]</strong> per month AND getting better data."
+                    </div>
+                    
+                    <p class="text-white/60 text-sm mt-3"><i class="fas fa-info-circle mr-1"></i>Makes them say the number. Reframe from cost to savings.</p>
+                </div>
+
+                <!-- Script 3 -->
+                <div class="autopsy-card rounded-xl p-6">
+                    <p class="text-[#A7BCB2] font-semibold mb-3">TRIAL CLOSE</p>
+                    
+                    <div class="script-box rounded p-4 text-sm leading-relaxed">
+                        "If we could solve [specific pain they mentioned] and have you up and running by [specific date], would that work for your timeline?"
+
+                        <br><br>[Wait. Let them answer.]
+
+                        <br><br>"Great. Should we schedule the kickoff call for [day]? Do mornings or afternoons work better?"
+                    </div>
+                    
+                    <p class="text-white/60 text-sm mt-3"><i class="fas fa-info-circle mr-1"></i>Specific. Assumptive. Next step locked.</p>
+                </div>
+
+                <!-- Script 4 -->
+                <div class="autopsy-card rounded-xl p-6">
+                    <p class="text-[#A7BCB2] font-semibold mb-3">OBJECTION: "Let me think about it"</p>
+                    
+                    <div class="script-box rounded p-4 text-sm leading-relaxed">
+                        "Totally get it. Can I ask—what specifically would help you feel confident about moving forward?
+
+                        <br><br>[Listen]
+
+                        <br><br>Got it. How about this—I send you [specific thing] by [specific time], we chat [specific day] at [specific time], and if it makes sense, we kick off [specific date]. Fair?"
+                    </div>
+                    
+                    <p class="text-white/60 text-sm mt-3"><i class="fas fa-info-circle mr-1"></i>Gets real objection. Specific next steps. No escape hatch.</p>
+                </div>
+
+                <!-- Script 5 -->
+                <div class="autopsy-card rounded-xl p-6">
+                    <p class="text-[#A7BCB2] font-semibold mb-3">OBJECTION: "It's expensive"</p>
+                    
+                    <div class="script-box rounded p-4 text-sm leading-relaxed">
+                        "I hear you. Let me ask—how many hours are you spending on finance right now?
+
+                        <br><br>[They answer]
+
+                        <br><br>And if you had those hours back, what would you focus on?
+
+                        <br><br>[They answer]
+
+                        <br><br>Right. So it's not $2,300—it's $2,300 minus the revenue you'd generate with that time back. Plus the leaks we'd find. Most clients discover $40-60K in annual leaks they didn't know about."
+                    </div>
+                    
+                    <p class="text-white/60 text-sm mt-3"><i class="fas fa-info-circle mr-1"></i>Questions, not defense. Opportunity cost + hidden value.</p>
+                </div>
+
+                <!-- Script 6 -->
+                <div class="autopsy-card rounded-xl p-6">
+                    <p class="text-[#A7BCB2] font-semibold mb-3">CREDIBILITY DROP</p>
+                    
+                    <div class="script-box rounded p-4 text-sm leading-relaxed">
+                        "You'll work with John—he's our East Coast director, former [Big Four], one of my former colleagues. He's incredibly capable, smart, meticulous, and calm. Exactly what you need when everything's on fire.
+
+                        <br><br>Want me to introduce you to him directly?"
+                    </div>
+                    
+                    <p class="text-white/60 text-sm mt-3"><i class="fas fa-info-circle mr-1"></i>Specific person. Behavioral descriptors. Offers connection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.remove('hidden');
+            
+            // Update tab styles
+            document.querySelectorAll('[id^="tab-"]').forEach(tab => {
+                tab.classList.remove('tab-active');
+                tab.classList.add('text-white/50');
+            });
+            
+            document.getElementById('tab-' + tabName).classList.add('tab-active');
+            document.getElementById('tab-' + tabName).classList.remove('text-white/50');
+        }
+    </script>
+</body>
+</html>
